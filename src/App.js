@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import { Category, Product } from './components.js'
-import { categories, listings } from './data-source.js'
+import { categories, listings } from './data.js'
 
 // console.log(product_categories, listings)
 

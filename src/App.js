@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import { Category, Product } from './components.js'
-import { product_categories, listings } from './data-source.js'
+import { categories, listings } from './data-source.js'
 
 // console.log(product_categories, listings)
 
@@ -11,7 +11,7 @@ function App() {
 
       <aside id="sidebar">
         {
-          product_categories
+          categories
           .map((str, i) => <Category name={str} key={i} />)
         }
       </aside>

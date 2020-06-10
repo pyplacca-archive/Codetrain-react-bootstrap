@@ -6,13 +6,14 @@
 
 :root {
     --orange: orange;
-    --green: #00AA16;
+    --green: #00aa16;
 }
 
 .App {
     display: flex;
     height: 100vh;
 }
+
 
 /* Sidebar */
 
@@ -50,9 +51,9 @@
     flex-grow: 1;
     padding: 40px;
 
+    --gap: 25px;
     display: grid;
     grid-template-columns: repeat(auto-fit, 230px);
-    --gap: 25px;
     grid-row-gap: var(--gap);
     grid-column-gap: var(--gap);
 
@@ -64,12 +65,12 @@
 #product-list .product {
     position: relative;
     height: 350px;
+    padding: 20px;
 
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
 
-    padding: 20px;
     border-radius: 6px;
     background-color: #fff;
 
@@ -96,6 +97,7 @@
 
     font-size: .75em;
     font-weight: 600;
+    
     background-color: var(--orange);
     color: #fff;
 }
@@ -140,10 +142,13 @@
 
 #product-list .product .item-checkout .amount::before {
     content: attr(price-before);
+    
     position: absolute;
     top: -13px;
     left: 0px;
+    
     color: var(--orange);
+    
     font-size: .8em;
     font-style: italic;
     text-decoration: line-through;

@@ -6,13 +6,15 @@ const categories = [
 	'laptop bags'
 ]
 
+const dir_src = './assets/images/'
+
 const listings = [
 	{
 		name: 'Advent Laptop Bag',
 		quantity: 5,
 		pre_price: 500,
 		discount: 20,
-		image: './assets/images/laptop-bags/advent.jpg',
+		image: 'laptop-bags/advent.jpg',
 	},
 
 	{
@@ -20,14 +22,14 @@ const listings = [
 		quantity: 11,
 		pre_price: 280,
 		discount: 5,
-		image: './assets/images/wallets/vertical-bifold.jpg',
+		image: 'wallets/vertical-bifold.jpg',
 	},
 
 	{
 		name: 'Median Large - Tan Handbag',
 		quantity: 1,
 		pre_price: 995,
-		image: './assets/images/handbags/median-tan.jpg',
+		image: 'handbags/median-tan.jpg',
 	},
 
 	{
@@ -35,7 +37,7 @@ const listings = [
 		quantity: 3,
 		pre_price: 780,
 		discount: 13,
-		image: './assets/images/wallets/victorine.jpg',
+		image: 'wallets/victorine.jpg',
 	},
 
 	{
@@ -43,7 +45,7 @@ const listings = [
 		quantity: 1,
 		pre_price: 370,
 		discount: 10,
-		image: './assets/images/shoulder-bags/matteyy.jpg',
+		image: 'shoulder-bags/matteyy.jpg',
 	},
 	
 	{
@@ -51,14 +53,14 @@ const listings = [
 		quantity: 2,
 		pre_price: 419,
 		discount: 50,
-		image: './assets/images/laptop-bags/chic-grey.jpg',
+		image: 'laptop-bags/chic-grey.jpg',
 	},
 	
 	{
 		name: 'Dune London Handbag',
 		quantity: 1,
 		pre_price: 1200,
-		image: './assets/images/handbags/dune-london.jpg',
+		image: 'handbags/dune-london.jpg',
 	},
 	
 	{
@@ -66,7 +68,7 @@ const listings = [
 		quantity: 2,
 		pre_price: 650,
 		discount: 8,
-		image: './assets/images/wallets/snowflake.jpg',
+		image: 'wallets/snowflake.jpg',
 	},
 	
 	{
@@ -74,7 +76,7 @@ const listings = [
 		quantity: 7,
 		pre_price: 300,
 		discount: 5,
-		image: './assets/images/laptop-bags/chevron-blue.jpg',
+		image: 'laptop-bags/chevron-blue.jpg',
 	},
 	
 	{
@@ -82,12 +84,13 @@ const listings = [
 		quantity: 13,
 		pre_price: 360,
 		discount: 3,
-		image: './assets/images/shoulder-bags/campy.jpg',
+		image: 'shoulder-bags/campy.jpg',
 	},
 ]
 
 
 export {
+	dir_src,
 	categories,
 	listings
 }	

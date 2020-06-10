@@ -1,4 +1,5 @@
 import React from 'react'
+import { dir_src } from './data.js'
 
 
 const numFormat = Intl.NumberFormat().format
@@ -15,7 +16,7 @@ class Product extends React.Component {
 					discount ? <p className="discount-percent">{discount}%</p> : ''
 				}
 				
-				<img className="item-image" src={image} alt={name} />
+				<img className="item-image" src={dir_src + image} alt={name} />
 				
 				<h5 className="item-name">
 					{

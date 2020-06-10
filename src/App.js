@@ -1,26 +1,34 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { Category, Product } from './components.js'
+import { product_categories, listings } from './data-source.js'
+
+// console.log(product_categories, listings)
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      <aside id="sidebar">
+        {
+          product_categories
+          .map((str, i) => <Category name={str} key={i} />)
+        }
+      </aside>
+
+      <main id='product-list'>
+        {
+          listings.map((obj, i) => <Product {...obj} key={i}/>)
+        }
+      </main>
     </div>
   );
 }
 
 export default App;
+
+/* 
+  David Placca
+  Codetrain Gen 14
+  React Part 3 - Packages & Boostrap, Exercise 1
+*/

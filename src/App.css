@@ -56,7 +56,7 @@
     grid-template-columns: repeat(
         auto-fill, minmax(230px, 1fr)
     );
-    grid-row-gap: var(--gap);
+    grid-row-gap: calc(var(--gap) / 2);
     grid-column-gap: var(--gap);
 
     background-color: #f0f0f0;
@@ -68,6 +68,7 @@
     position: relative;
     height: 365px;
     padding: 20px;
+    margin-bottom: 25px;
 
     display: flex;
     flex-direction: column;
@@ -169,4 +170,102 @@
     background-size: 20px;
     background-position: 0px center;
 
+}
+
+/* Media Queries */
+@media screen and (max-width: 425px) {
+
+    #sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+
+        height: 50px;
+        width: 100%;
+
+        display: inline-flex;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        
+        overflow-x: auto;
+        
+        border: none;
+        border-bottom: 1px solid #ebebeb;
+        
+        background-color: #fff;
+
+        z-index: 3;
+    }
+
+    #sidebar .category {
+        flex-basis: 90px;
+        
+        padding: 40px 9px 0 9px;
+        margin: 0px;
+        
+        color: transparent;
+        
+        background-position: center 15px;
+        
+        line-height: 15px;
+        text-align: center;
+
+    }
+
+    #sidebar:hover {
+        height: 85px;
+        box-shadow: 0px 1px 6px #d2d2d2;
+    }
+
+    #sidebar:hover .category {
+        color: unset;
+    }
+
+    #sidebar .category:hover {
+        flex-grow: 1.1;
+        border: none;
+        border-bottom: 3px solid #000;
+    }
+
+    #product-list {
+        padding-top: 60px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 768px) {
+
+    #sidebar {
+        height: 100vh;
+        width: 75px;
+        
+        position: fixed;
+        top: 0;
+        left: 0;
+
+        background-color: #fff;
+        
+        z-index: 3;
+        overflow-x: hidden;
+        
+        transition: width ease .3s;
+    }
+
+    #sidebar:hover {
+        width: 220px;
+        box-shadow: 0px 0px 6px #d2d2d2;
+    }
+
+    #sidebar:hover .category {
+        color: unset;
+    }
+
+    #sidebar .category {
+        color: transparent;
+        transition: color ease .3s;
+        white-space: nowrap;
+    }
+
+    #product-list {
+        padding-left: 130px;
+    }
 }

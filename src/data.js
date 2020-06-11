@@ -60,6 +60,7 @@ const listings = [
 		name: 'Dune London Handbag',
 		quantity: 1,
 		pre_price: 1200,
+		discount: 70,
 		image: 'handbags/dune-london.jpg',
 	},
 	
@@ -91,6 +92,7 @@ const listings = [
 		name: 'Ladies Large Purses Women’s Zip Around Purse / Wallet',
 		quantity: 21,
 		pre_price: 11,
+		discount: 70,
 		image: 'purses/ladies-large-purse.jpg',
 	},
 ]

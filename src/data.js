@@ -28,7 +28,7 @@ const listings = [
 	{
 		name: 'Median Large - Tan Handbag',
 		quantity: 1,
-		pre_price: 995,
+		pre_price: 175,
 		image: 'handbags/median-tan.jpg',
 	},
 
@@ -85,6 +85,13 @@ const listings = [
 		pre_price: 360,
 		discount: 3,
 		image: 'shoulder-bags/campy.jpg',
+	},
+
+	{
+		name: 'Ladies Large Purses Women’s Zip Around Purse / Wallet',
+		quantity: 21,
+		pre_price: 11,
+		image: 'purses/ladies-large-purse.jpg',
 	},
 ]
 

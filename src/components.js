@@ -19,15 +19,11 @@ class Product extends React.Component {
 				<img className="item-image" src={dir_src + image} alt={name} />
 				
 				<h5 className="item-name">
-					{
-						name.length > 32 ? 
-						name.substr(0, 29) + '...' : 
-						name 
-					}
+					{ name }
 				</h5>
 				
 				<p className="item-quantity">
-					{quantity + 'pc' + (quantity > 1 ? 's' : '')}
+					{quantity + ' pc' + (quantity > 1 ? 's' : '')}
 				</p>
 				
 				<div className="item-checkout">

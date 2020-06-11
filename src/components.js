@@ -13,7 +13,7 @@ class Product extends React.Component {
 		return (
 			<div className="product">
 				{
-					discount ? <p className="discount-percent">{discount}%</p> : ''
+					discount ? <p className="discount-percent">{discount + '%'}</p> : ''
 				}
 				
 				<img className="item-image" src={dir_src + image} alt={name} />
@@ -27,7 +27,7 @@ class Product extends React.Component {
 				</h5>
 				
 				<p className="item-quantity">
-					{quantity} pc{quantity > 1 ? 's' : ''}
+					{quantity + 'pc' + (quantity > 1 ? 's' : '')}
 				</p>
 				
 				<div className="item-checkout">

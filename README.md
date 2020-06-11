@@ -24,7 +24,7 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 The build is minified and the filenames include the hashes.<br />
 Your app is ready to be deployed! 
-This app is currently deployed and running at [codetrain-react-bootstrap.netlify.app](https://codetrain-react-bootstrap.netlify.app/) thanks to [Netlify](netlify.com)
+This app is currently deployed and running at [codetrain-react-bootstrap.netlify.app](https://codetrain-react-bootstrap.netlify.app/) thanks to [Netlify](https://netlify.com)
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 

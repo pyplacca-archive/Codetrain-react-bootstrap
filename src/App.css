@@ -56,7 +56,7 @@
     grid-template-columns: repeat(
         auto-fill, minmax(230px, 1fr)
     );
-    grid-row-gap: calc(var(--gap) / 2);
+    /*grid-row-gap: calc(var(--gap) / 2);*/
     grid-column-gap: var(--gap);
 
     background-color: #f0f0f0;
@@ -93,7 +93,7 @@
 #product-list .product .discount-percent {
     position: absolute;
     top: 15px;
-    right: 15px;
+    right: 20px;
 
     padding: 3px 9px;
     border-radius: 20px;
@@ -172,7 +172,9 @@
 
 }
 
+
 /* Media Queries */
+
 @media screen and (max-width: 425px) {
 
     #sidebar {
@@ -187,7 +189,7 @@
         justify-content: space-between;
         flex-wrap: nowrap;
         
-        overflow-x: auto;
+        overflow: auto hidden;
         
         border: none;
         border-bottom: 1px solid #ebebeb;

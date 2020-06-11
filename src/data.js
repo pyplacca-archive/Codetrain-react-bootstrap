@@ -6,7 +6,7 @@ const categories = [
 	'laptop bags'
 ]
 
-const dir_src = './assets/images/'
+const img_dir = './assets/images/'
 
 const listings = [
 	{
@@ -76,7 +76,6 @@ const listings = [
 		name: 'Chevron Blue Laptop Bag',
 		quantity: 7,
 		pre_price: 300,
-		discount: 5,
 		image: 'laptop-bags/chevron-blue.jpg',
 	},
 	
@@ -92,14 +91,13 @@ const listings = [
 		name: 'Ladies Large Purses Women’s Zip Around Purse / Wallet',
 		quantity: 21,
 		pre_price: 11,
-		discount: 70,
 		image: 'purses/ladies-large-purse.jpg',
 	},
 ]
 
 
 export {
-	dir_src,
+	img_dir,
 	categories,
 	listings
 }	

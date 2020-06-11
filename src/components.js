@@ -1,5 +1,5 @@
 import React from 'react'
-import { dir_src } from './data.js'
+import { img_dir } from './data.js'
 
 
 const numFormat = Intl.NumberFormat().format
@@ -7,23 +7,23 @@ const numFormat = Intl.NumberFormat().format
 
 class Product extends React.Component {
 	render () {
-		const {discount, image, name, quantity, pre_price } = this.props
+		const { discount, image, name, quantity, pre_price } = this.props
 		const price = pre_price - ((discount / 100) * pre_price).toFixed()
 
 		return (
 			<div className="product">
 				{
-					discount ? <p className="discount-percent">{'-' + discount + '%'}</p> : ''
+					discount ? <p className="discount-percent">{ '-' + discount + '%' }</p> : ''
 				}
 				
-				<img className="item-image" src={dir_src + image} alt={name} />
+				<img className="item-image" src={img_dir + image} alt={name} />
 				
 				<h5 className="item-name">
 					{ name }
 				</h5>
 				
 				<p className="item-quantity">
-					{quantity + ' pc' + (quantity > 1 ? 's' : '')}
+					{ quantity + ' pc' + (quantity > 1 ? 's' : '') }
 				</p>
 				
 				<div className="item-checkout">
@@ -31,7 +31,7 @@ class Product extends React.Component {
 						className="amount" 
 						price-before={discount ? '$' + numFormat(pre_price) : ''}
 					>
-						${numFormat(price || pre_price)}
+						${ numFormat(price || pre_price) }
 					</p>
 				
 					<p 
@@ -59,7 +59,7 @@ function Category({name}) {
 			className="category" 
 			style={{backgroundImage: bg}}
 		>
-			{name}
+			{ name }
 		</p>
 	)
 }

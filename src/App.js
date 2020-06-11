@@ -3,7 +3,6 @@ import './App.css';
 import { Category, Product } from './components.js'
 import { categories, listings } from './data.js'
 
-// console.log(product_categories, listings)
 
 function App() {
   return (
@@ -18,7 +17,7 @@ function App() {
 
       <main id='product-list'>
         {
-          listings.map((obj, i) => <Product {...obj} key={i}/>)
+          listings.map((obj, i) => <Product {...obj} key={i} />)
         }
       </main>
     </div>

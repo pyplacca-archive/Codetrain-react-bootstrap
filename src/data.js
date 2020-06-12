@@ -1,12 +1,14 @@
 const categories = [
+	'all products',
 	'purse', 
 	'hand bags', 
 	'shoulder bags', 
 	'wallet', 
 	'laptop bags'
 ]
-
-const img_dir = './assets/images/'
+const [[, p, hb, sb, w, lb], img_dir] = [
+	categories, './assets/images/'
+]
 
 const listings = [
 	{
@@ -15,6 +17,9 @@ const listings = [
 		pre_price: 500,
 		discount: 20,
 		image: 'laptop-bags/advent.jpg',
+		tags: [
+			lb
+		]
 	},
 
 	{
@@ -23,6 +28,9 @@ const listings = [
 		pre_price: 280,
 		discount: 5,
 		image: 'wallets/vertical-bifold.jpg',
+		tags: [
+			w
+		]
 	},
 
 	{
@@ -30,6 +38,9 @@ const listings = [
 		quantity: 1,
 		pre_price: 175,
 		image: 'handbags/median-tan.jpg',
+		tags: [
+			hb
+		]
 	},
 
 	{
@@ -38,6 +49,9 @@ const listings = [
 		pre_price: 780,
 		discount: 13,
 		image: 'wallets/victorine.jpg',
+		tags: [
+			w
+		]
 	},
 
 	{
@@ -46,6 +60,9 @@ const listings = [
 		pre_price: 370,
 		discount: 10,
 		image: 'shoulder-bags/matteyy.jpg',
+		tags: [
+			sb
+		]
 	},
 	
 	{
@@ -54,6 +71,9 @@ const listings = [
 		pre_price: 419,
 		discount: 50,
 		image: 'laptop-bags/chic-grey.jpg',
+		tags: [
+			lb
+		]
 	},
 	
 	{
@@ -62,6 +82,9 @@ const listings = [
 		pre_price: 1200,
 		discount: 70,
 		image: 'handbags/dune-london.jpg',
+		tags: [
+			hb
+		]
 	},
 	
 	{
@@ -70,6 +93,9 @@ const listings = [
 		pre_price: 650,
 		discount: 8,
 		image: 'wallets/snowflake.jpg',
+		tags: [
+			w
+		]
 	},
 	
 	{
@@ -77,6 +103,9 @@ const listings = [
 		quantity: 7,
 		pre_price: 300,
 		image: 'laptop-bags/chevron-blue.jpg',
+		tags: [
+			lb
+		]
 	},
 	
 	{
@@ -85,6 +114,9 @@ const listings = [
 		pre_price: 360,
 		discount: 3,
 		image: 'shoulder-bags/campy.jpg',
+		tags: [
+			sb
+		]
 	},
 
 	{
@@ -92,6 +124,9 @@ const listings = [
 		quantity: 21,
 		pre_price: 11,
 		image: 'purses/ladies-large-purse.jpg',
+		tags: [
+			p
+		]
 	},
 ]
 

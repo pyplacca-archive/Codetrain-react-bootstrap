@@ -7,11 +7,11 @@ const numFormat = Intl.NumberFormat().format
 
 class Product extends React.Component {
 	render () {
-		const { discount, image, name, quantity, pre_price } = this.props
+		const { discount, image, name, quantity, pre_price, tags } = this.props
 		const price = pre_price - ((discount / 100) * pre_price).toFixed()
 
 		return (
-			<div className="product">
+			<div className="product" tags={tags.join()}>
 				{
 					discount ? <p className="discount-percent">{ '-' + discount + '%' }</p> : ''
 				}
@@ -57,6 +57,7 @@ function Category({name}) {
 	return (
 		<p 
 			className="category" 
+			filter_name={ name }
 			style={{backgroundImage: bg}}
 		>
 			{ name }

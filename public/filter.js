@@ -1,11 +1,13 @@
 const [
 	temp_storage,
 	container, 
-	counter
+	counter,
+	all_prods
 ] = [
 	[],
 	document.getElementById('product-list'),
-	document.createElement('span')
+	document.createElement('span'),
+	document.querySelector('.category')
 ]
 counter.setAttribute('class', 'counter')
 
@@ -13,11 +15,13 @@ counter.setAttribute('class', 'counter')
 function applyFilter(elm) {
 	const cls = 'filter-active'
 	// first remove class name (cls) from previous element...
-	const previous = document.querySelector('.' + cls)
-	previous ? previous.classList.remove(cls) : null
+	try {
+		elm.parentNode.querySelector('.' + cls)
+		.classList.remove(cls)
+	} catch (TypeError) { null }
 	// then append it to the selected category...
 	elm.classList.add(cls)
-	// then filter listed items
+	// then filter listed product items
 	filterItems(
 		elm.getAttribute('filter_name'), 
 		elm
@@ -25,42 +29,37 @@ function applyFilter(elm) {
 }
 
 function filterItems(category, sender) {
-	if (category !== 'all products') {
-		// retrieve any item that belongs to the selected category from temp_storage
-		temp_storage.reduce((arr, elt, i) => {
-			elt.getAttribute('tags').includes(category) ?
-				container.appendChild(elt) :
-					arr.push(elt)
-			return arr
-		}, []);
-		// then remove the items that don't belong to the 
-		// selected category from the container (product-list)
-		[...container.children].forEach(item => {
-			const tags = item.getAttribute('tags')
+	let [count, style] = [0, 'flex']
 
-			if (!tags.includes(category)) {
-				temp_storage.push(item)
-				container.removeChild(item)
+	for (item of container.children) {
+		const tags = item.getAttribute('tags')
+		
+		if (category !== 'all products') {
+			if (tags.includes(category)) {
+				style = 'flex'
+			} else {
+				style = 'none'
+				count--
 			}
-		})
-	} else {
-		while (temp_storage.length) {
-			container.appendChild(temp_storage.pop())
 		}
+		// changing product item's visibility/display style,
+		// helps maintain the insertion order of product items
+		item.style.display = style
+		count++
 	}
-	setCounter(sender)
+
+	setCounter(sender, count)
 }
 
-function setCounter (sender) {
-	counter.innerText = container.children.length
+function setCounter (sender, count) {
+	counter.innerText = count
 	sender.appendChild(counter)
 }
 
 
-let all_prods = document.querySelector('.category')
 all_prods.classList.add('filter-active')
 
-setCounter(all_prods)
+setCounter(all_prods, container.children.length)
 
 document.getElementById('sidebar').addEventListener(
 	'click', 

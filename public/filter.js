@@ -57,7 +57,10 @@ function setCounter (sender) {
 }
 
 
-setCounter(document.querySelector('.category'))
+let all_prods = document.querySelector('.category')
+all_prods.classList.add('filter-active')
+
+setCounter(all_prods)
 
 document.getElementById('sidebar').addEventListener(
 	'click', 
@@ -67,3 +70,5 @@ document.getElementById('sidebar').addEventListener(
 		null
 	}
 )
+
+delete all_prods

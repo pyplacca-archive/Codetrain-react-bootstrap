@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { Category, Product } from './components.js'
+import { Category, Product } from './components.jsx'
 import { categories, listings } from './data.js'
 
 

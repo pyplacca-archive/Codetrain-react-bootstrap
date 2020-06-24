@@ -16,36 +16,48 @@ function applyFilter(elm) {
 	const cls = 'filter-active'
 	// first remove class name (cls) from previous element...
 	try {
-		elm.parentNode.querySelector('.' + cls)
-		.classList.remove(cls)
-	} catch (TypeError) { null }
-	// then append it to the selected category...
-	elm.classList.add(cls)
-	// then filter listed product items
-	filterItems(
-		elm.getAttribute('filter_name'), 
 		elm
-	)
+		.parentNode
+		.querySelector('.' + cls)
+		.classList
+		.remove(cls)
+	} 
+	catch (TypeError) {
+		null
+	}
+	finally {
+		// then append it to the selected category...
+		elm.classList.add(cls)
+		// then filter listed product items
+		filterItems(
+			elm.getAttribute('filter-by'), 
+			elm
+		)
+	}
 }
 
 function filterItems(category, sender) {
-	let [count, style] = [0, 'flex']
+	let [count, style, cls] = [0, 'flex', 'filtered-out']
 
 	for (item of container.children) {
 		const tags = item.getAttribute('tags')
 		
 		if (category !== 'all products') {
 			if (tags.includes(category)) {
-				style = 'flex'
+				// style = 'flex'
+				item.classList.remove(cls)
 			} else {
-				style = 'none'
+				// style = 'none'
+				item.classList.add(cls)
 				count--
 			}
+		} else {
+			item.classList.remove(cls)
 		}
 		// changing product item's visibility/display style,
 		// helps maintain the insertion order of product items
-		item.style.display = style
-		count++
+		// item.style.display = style
+		count++	
 	}
 
 	setCounter(sender, count)

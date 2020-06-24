@@ -6,19 +6,40 @@ const numFormat = Intl.NumberFormat().format
 
 
 class Product extends React.Component {
+
 	render () {
-		const { discount, image, name, quantity, pre_price, tags } = this.props
-		const price = pre_price - ((discount / 100) * pre_price).toFixed()
+		const { 
+			discount, 
+			image, 
+			name, 
+			quantity, 
+			price, 
+			tags 
+		} = this.props
 
 		return (
-			<div className="product" tags={tags.join()}>
+			<div 
+				className="product" 
+				tags={tags.join()}
+			>
 				{
-					discount ? <p className="discount-percent">{ '-' + discount + '%' }</p> : ''
+					discount ? 
+					<p className="discount-percent">
+						{ '-' + discount + '%' }
+					</p> : 
+					''
 				}
 				
-				<img className="item-image" src={img_dir + image} alt={name} />
+				<img 
+					className="item-image" 
+					src={img_dir + image} 
+					alt={name} 
+				/>
 				
-				<h5 className="item-name">
+				<h5 
+					className="item-name" 
+					title={name}
+				>
 					{ name }
 				</h5>
 				
@@ -29,14 +50,21 @@ class Product extends React.Component {
 				<div className="item-checkout">
 					<p 
 						className="amount" 
-						price-before={discount ? '$' + numFormat(pre_price) : ''}
+						price-before={
+							discount ? '$' + numFormat(price) : ''
+						}
 					>
-						${ numFormat(price || pre_price) }
+						{'$' + numFormat(
+							price - ((discount / 100) * price).toFixed() || 
+							price
+						)}
 					</p>
 				
 					<p 
 						className="add-to-cart" 
-						style={{backgroundImage: "url('./assets/icons/shopping-bag.png')"}}
+						style={{
+							backgroundImage: "url('./assets/icons/shopping-bag.png')"
+						}}
 					>
 						Cart
 					</p>
@@ -49,7 +77,7 @@ class Product extends React.Component {
 
 
 function Category({name}) {
-	const icn = name.split(' ').join('-').toLowerCase()
+	const icn = name.replace(' ', '-').toLowerCase()
 	const bg = `url("./assets/icons/${
 		icn.endsWith('s') ? icn.substring(0, icn.length-1) : icn
 	}.png")`
@@ -57,7 +85,7 @@ function Category({name}) {
 	return (
 		<p 
 			className="category" 
-			filter_name={ name }
+			filter-by={ name }
 			style={{backgroundImage: bg}}
 		>
 			{ name }

@@ -101,13 +101,15 @@
 
     transition-property: transform, box-shadow;
     transition: all ease .3s;
+
+    cursor: default;
 }
 
-#product-list .product:hover .item-image {
+#product-list .product:not(.filtered-out):hover .item-image {
     transform: scale(1.1);
 }
 
-#product-list .product:hover {
+#product-list .product:not(.filtered-out):hover {
     transform: scale(1.03);
     box-shadow: 0px 0px 20px #d2d2d2;
 }
@@ -192,6 +194,14 @@
     background-size: 20px;
     background-position: 0px center;
 
+    cursor: pointer;
+}
+
+#product-list .filtered-out {
+    filter: grayscale();
+    transform: scale(.91);
+    opacity: .5;
+    transition: all ease .3s
 }
 
 
@@ -204,13 +214,12 @@
         top: 0;
         left: 0;
 
+        flex-grow: 1;
         height: 50px;
         width: 100%;
 
         display: flex;
-        flex-grow: 1;
         flex-direction: row;
-        /*justify-content: space-between;*/
         flex-wrap: nowrap;
         
         overflow: auto hidden;
@@ -238,7 +247,6 @@
         border: none;
 
         display: unset;
-
     }
 
     #sidebar:hover {
